@@ -1,0 +1,1340 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>The Italian Table</title>
+		<link rel="stylesheet" href="css/styles.css">
+		<link rel="stylesheet" href="https://use.typekit.net/mil3frr.css">
+		<link rel="stylesheet" href="https://use.typekit.net/fzr4bfx.css">
+	<style>
+		body{
+			margin: 0 0 0 0;
+/*			background-color:lemonchiffon;*/
+			/*font-family: Gotham, "Helvetica Neue", Helvetica, Arial, "sans-serif";*/
+		}
+		header{
+			width: 100%;
+			height: 100px;
+			background-color:lemonchiffon;
+			text-align: center;
+			/*look up flex box for this*/
+			font-size: 45px;
+			line-height: 1.8;
+			font-weight: bolder;
+			color: black;
+			
+		}
+		nav{
+			width: 100%;
+			height: 60px;
+			/*text-align: center;*/
+			background-color: darkred;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			color: antiquewhite;
+			
+		}
+		.dropdown {
+    		position: relative;
+    		display: flex;
+    		align-items: center;
+    		height: 60px;
+    		margin-left: 2%;
+    		margin-right: 2%;
+		}
+		.dropbtn {
+    		display: block;
+		}
+		.dropdown-content {
+    		display: none;
+    		position: absolute;
+    		top: 60px;
+    		left: 0;
+    		background-color: darkred;
+    		min-width: 120px;
+    		z-index: 10;
+		}
+		.dropdown-content a {
+    		display: block;
+    		padding: 12px 16px;
+    		margin: 0;
+    		color: antiquewhite;
+    		text-align: center;
+		}
+		.dropdown-content a:hover {
+    background-color: darkred;
+    color: darkolivegreen;
+    text-decoration: none;
+    opacity: 1;
+}
+		.dropdown:hover .dropdown-content {
+    		display: block;
+		}
+		a{
+			margin-left: 2%;
+			margin-right: 2%;
+			text-decoration: none;
+			color: antiquewhite;
+			
+		}
+		a:hover {
+    		color: darkolivegreen;
+    		text-decoration: underline;
+		}
+
+		}
+		main{
+			width: 80%;
+			min-height: 1200px;
+			margin: 0 auto;
+			background-color:darkolivegreen;
+			padding: 20px;
+			box-sizing: border-box;
+			position: relative;
+		}
+		#pictureHolder{
+			width: 80%;
+			max-width: 800px;
+			margin: 0 auto;
+			min-height: 300px;
+  			display: flex;
+  			flex-wrap: wrap;
+			justify-content:space-between;
+			gap: 20px;
+			/*background-color: aqua;*/
+		}
+		.picture {
+			width: 200px;
+			height: 200px;
+			max-width: 100%;
+			/*background-color: aqua;*/
+		}
+		.picture img {
+    		max-width: 100%;
+ 	   		height: auto;
+		}
+		#textHolder{
+			width: 70%;
+			margin: 30px auto 0 auto;
+/*			min-height: 500px;*/
+			/*background-color: yellow;*/
+			/*display: flex;*/
+			box-sizing: border-box;
+			color: antiquewhite;
+			text-align: center;
+		}
+footer {
+    width: 100%;
+    height: 300px;
+    padding: 20px clamp(150px, 12vw, 200px);
+    box-sizing: border-box;
+    background-color: darkred;
+    color: white;
+}
+	
+		
+		
+		@media screen and (max-width: 700px) {
+
+    header {
+        height: auto;
+        font-size: 30px;
+        padding: 20px 0;
+        line-height: 1.2;
+    }
+
+    nav {
+        height: auto;
+        padding: 15px 0;
+        flex-wrap: wrap;
+    }
+
+    nav a {
+        margin: 5px 10px;
+    }
+
+    main {
+        width: 95%;
+        height: auto;
+    }
+
+    #pictureHolder {
+        width: 100%;
+        height: auto;
+        gap: 15px;
+        justify-content: center;
+    }
+
+    .picture {
+        width: 200px;
+    }
+
+    #textHolder {
+        width: 100%;
+        height: auto;
+/*        min-height: 400px;*/
+        margin: 30px auto 0 auto;
+        padding: 20px;
+		text-align: center;
+    }
+
+footer {
+    height: auto;
+    padding: 20px;
+}
+			.side-carousel {
+				display: none;
+			}
+}
+
+		
+
+/* Continuous masked carousel */
+.carousel-viewport {
+  width: min(100%, 660px);
+  height: 370px;
+  overflow: hidden;
+  position: relative;
+  margin: 35px auto;
+  isolation: isolate;
+  /* The mask clips the row while revealing the neighboring images. */
+  -webkit-mask-image: linear-gradient(to right, transparent, black 6%, black 94%, transparent);
+  mask-image: linear-gradient(to right, transparent, black 6%, black 94%, transparent);
+}
+.carousel-track {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  width: max-content;
+  height: 100%;
+  will-change: transform;
+}
+.carousel-item {
+  flex: 0 0 210px;
+  height: 210px;
+  position: relative;
+  z-index: 0;
+}
+.carousel-item img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 0px;
+  transition: transform .3s ease, box-shadow .3s ease;
+  transform-origin: center;
+}
+.carousel-item:hover { z-index: 2; }
+.carousel-item:hover img {
+  transform: scale(1.3);
+  box-shadow: 0 12px 28px rgba(0,0,0,.35);
+}
+@media (max-width: 700px) {
+  .carousel-viewport { height: 220px; }
+  .carousel-item { flex-basis: 160px; height: 160px; }
+}
+		/* Additional horizontal scroll section */ 
+		.scroll-gallery { 
+			width: 80%; 
+			max-width: 1000px; 
+			margin: 40px auto; 
+			overflow-x: auto; 
+			overflow-y: hidden; 
+			padding: 10px 10px 25px 10px; 
+		} 
+		.scroll-gallery-track 
+		{ 
+			display: flex; 
+			gap: 20px; 
+			width: max-content; 
+		} 
+		.scroll-gallery-item {
+    flex: 0 0 200px;
+    height: auto;
+    text-align: center;
+}
+
+.scroll-gallery-item img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 0px;
+    display: block;
+}
+
+.scroll-gallery-item .image-caption {
+    color: antiquewhite;
+    font-size: 16px;
+    margin-top: 8px;
+    text-align: center;
+}
+		/* Scrollbar */ 
+		.scroll-gallery::-webkit-scrollbar 
+		{
+			height: 12px; 
+		}
+		.scroll-gallery::-webkit-scrollbar-track 
+		{
+			background: antiquewhite; 
+			border-radius: 10px; 
+		} 
+		.scroll-gallery::-webkit-scrollbar-thumb 
+		{ 
+			background: darkred; 
+			border-radius: 10px; 
+		} 
+		.scroll-gallery::-webkit-scrollbar-thumb:hover 
+		{ 
+			background: #8b0000; 
+		}
+		/* Mobile */ 
+		@media (max-width: 700px) 
+		{ 
+			.scroll-gallery 
+			{ width: 100%; 
+			} 
+			.scroll-gallery-item 
+			{ 
+			flex-basis: 160px; 
+				height: 160px; 
+			} 
+			.scroll-gallery-item img 
+			{ 
+				width: 160px; 
+				height: 160px; 
+			} 
+			@media (max-width: 700px) 
+			{
+    		.scroll-gallery-item .image-caption {
+        		font-size: 14px;
+    }
+}
+		}
+
+/* =================================
+   AUTOMATIC VERTICAL SIDE CAROUSELS
+   ================================= */
+
+.side-carousel {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    width: clamp(90px, 8vw, 140px);
+    overflow: hidden;
+    z-index: 5;
+    pointer-events: none;
+}
+
+/* Keep the carousels beside the main content */
+.side-carousel.left {
+    left: 1vw;
+}
+
+.side-carousel.right {
+    right: 1vw;
+}
+
+.side-carousel-track {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+    height: max-content;
+    will-change: transform;
+    animation: side-scroll 40s linear infinite;
+}
+
+/* Make the right side move in the opposite direction */
+.side-carousel.right .side-carousel-track {
+    animation-direction: reverse;
+}
+
+.side-carousel-item {
+    flex: 0 0 clamp(90px, 8vw, 140px);
+    width: 100%;
+    height: clamp(90px, 8vw, 140px);
+}
+
+.side-carousel-item img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Continuous loop */
+@keyframes side-scroll {
+    from {
+        transform: translateY(0);
+    }
+    to {
+        transform: translateY(-50%);
+    }
+}
+
+/* Hide on smaller screens */
+@media (max-width: 1000px) {
+    .side-carousel {
+        display: none;
+    }
+}
+@media (max-width: 1000px) {
+    footer {
+        padding: 20px;
+    }
+}
+		
+	</style>
+</head>
+
+<body>
+	<header>The Italian Table</header>
+	<nav>-
+    <a href="index.html">Home</a>-
+
+    <div class="dropdown">
+        <a href="leadership.html" class="dropbtn">Leadership</a>
+
+        <div class="dropdown-content">
+            <a href="ceo.html">CEO</a>
+            <a href="smm.html">SMM</a>
+            <a href="coo.html">COO</a>
+            <a href="cfo.html">CFO</a>
+        </div>
+    </div>
+
+    -<a href="locations.html">Locations</a>-
+</nav>
+	<main>
+		<!-- Hamburger menu -->
+<div class="site-menu">
+
+    <button class="menu-button" onclick="toggleMenu()"
+            aria-label="Open menu" aria-expanded="false"
+            aria-controls="extraMenu">
+        ☰
+    </button>
+
+    <div class="site-menu-content" id="extraMenu">
+    	<a href="about us.html">About Us</a>
+    	<a href="careers.html">Careers</a>
+    	<a href="community-involvement.html">Community Involvement</a>
+    	<a href="contact.html">Contact Us</a>
+    	<a href="customer-reviews.html">Customer Reviews</a>
+    	<a href="dietary-options.html">Dietary Options</a>
+		<a href="faq.html">FAQ</a>
+	</div>
+
+</div>
+		<!--```html-->
+<!-- =================================
+     LEFT AUTOMATIC CAROUSEL
+     ================================= -->
+
+<div class="side-carousel left">
+
+    <div class="side-carousel-track">
+
+        <div class="side-carousel-item">
+            <img src="images/Raspberry Lemonade.jpg" alt="Raspberry Lemonade">
+        </div>
+		
+        <div class="side-carousel-item">
+            <img src="images/Garlic Knots.jpg" alt="Garlic Knots">
+        </div>
+		
+        <div class="side-carousel-item">
+            <img src="images/Mozzarella Sticks.jpg" alt="Mozzarella Sticks">
+        </div>
+
+        <div class="side-carousel-item">
+            <img src="images/Bruschetta.jpg" alt="Bruschetta">
+        </div>
+
+        <div class="side-carousel-item">
+            <img src="images/Fried Ravioli.jpg" alt="Fried Ravioli">
+        </div>
+
+        <div class="side-carousel-item">
+            <img src="images/Garlic Bread.jpg" alt="Garlic Bread">
+		
+        </div>
+        <div class="side-carousel-item">
+            <img src="images/Stuffed Mushrooms.jpg" alt="Stuffed Mushrooms">
+        </div>
+
+        <div class="side-carousel-item">
+            <img src="images/Caprese Salad.jpg" alt="Caprese Salad">
+        </div>
+
+        <div class="side-carousel-item">
+            <img src="images/Fried Calamari.jpg" alt="Fried Calamari">
+        </div>
+
+        <div class="side-carousel-item">
+            <img src="images/Meatballs.jpg" alt="Meatballs">
+        </div>
+
+        <div class="side-carousel-item">
+            <img src="images/Antipasto Platter.jpg" alt="Antipasto Platter">
+        </div>
+        <div class="side-carousel-item">
+            <img src="images/Meatball Sub.jpg" alt="Meatball Sub">
+        </div>
+
+        <div class="side-carousel-item">
+            <img src="images/Chicken Parmesan Sub.jpg" alt="Chicken Parmesan Sub">
+        </div>
+
+        <div class="side-carousel-item">
+            <img src="images/Italian Sub.jpg" alt="Italian Sub">
+        </div>
+
+        <div class="side-carousel-item">
+            <img src="images/Chicken Pesto Sandwich.jpg" alt="Chicken Pesto Sandwich">
+        </div>
+
+        <div class="side-carousel-item">
+            <img src="images/Grilled Chicken Sandwich.jpg" alt="Grilled Chicken Sandwich">
+        </div>
+
+        <div class="side-carousel-item">
+            <img src="images/Italian Sausage Sub.jpg" alt="Italian Sausage Sub">
+        </div>
+		
+        <div class="side-carousel-item">
+            <img src="images/Eggplant Parmesan Sub.jpg" alt="Eggplant Parmesan Sub">
+        </div>
+
+        <div class="side-carousel-item">
+            <img src="images/Caprese Sandwich.jpg" alt="Caprese Sandwich">
+        </div>
+		
+        <div class="side-carousel-item">
+            <img src="images/Chicken Mozzarella Sandwich.jpg" alt="Chicken Mozzarella Sandwich">
+        </div>
+
+        <div class="side-carousel-item">
+            <img src="images/Philly Cheesesteak.jpg" alt="Philly Cheesesteak">
+        </div>
+        <div class="side-carousel-item">
+            <img src="images/Fettuccine Alfredo.jpg" alt="Fettuccine Alfredo">
+        </div>
+
+        <div class="side-carousel-item">
+            <img src="images/Spaghetti Meatballs.jpg" alt="Spaghetti Meatballs">
+        </div>
+
+        <div class="side-carousel-item">
+            <img src="images/Chicken Alfredo.jpg" alt="Chicken Alfredo">
+        </div>
+
+        <div class="side-carousel-item">
+            <img src="images/Creamy Salmon Pasta.jpg" alt="Creamy Salmon Pasta">
+        </div>
+
+        <div class="side-carousel-item">
+            <img src="images/Chicken Parmesan Pasta.jpg" alt="Chicken Parmesan Pasta">
+        </div>
+
+        <div class="side-carousel-item">
+            <img src="images/Penne Arrabbiata.jpg" alt="Penne Arrabbiata">
+        </div>
+		
+        <div class="side-carousel-item">
+            <img src="images/Baked Ziti.jpg" alt="Baked Ziti">
+        </div>
+
+        <div class="side-carousel-item">
+            <img src="images/Lasagna.jpg" alt="Lasagna">
+        </div>
+		
+        <div class="side-carousel-item">
+            <img src="images/Cheese Ravioli.jpg" alt="Cheese Ravioli">
+        </div>
+
+        <div class="side-carousel-item">
+            <img src="images/Broccoli Chicken Pasta.jpg" alt="Broccoli Chicken Pasta">
+        </div>
+        <div class="side-carousel-item">
+            <img src="images/Cheese Pizza.jpg" alt="Cheese Pizza">
+        </div>
+
+        <div class="side-carousel-item">
+            <img src="images/Pepperoni Pizza.jpg" alt="Pepperoni Pizza">
+        </div>
+
+        <div class="side-carousel-item">
+            <img src="images/Margherita Pizza.jpg" alt="Margherita Pizza">
+        </div>
+
+        <div class="side-carousel-item">
+            <img src="images/Meat Lovers Pizza.jpg" alt="Meat Lovers Pizza">
+        </div>
+
+        <div class="side-carousel-item">
+            <img src="images/Supreme Pizza.jpg" alt="Supreme Pizza">
+        </div>
+
+        <div class="side-carousel-item">
+            <img src="images/Chicken Alfredo Pizza.jpg" alt="Chicken Alfredo Pizza">
+        </div>
+		
+        <div class="side-carousel-item">
+            <img src="images/BBQ Chicken Pizza.jpg" alt="BBQ Chicken Pizza">
+        </div>
+
+        <div class="side-carousel-item">
+            <img src="images/Buffalo Chicken Pizza.jpg" alt="Buffalo Chicken Pizza">
+        </div>
+		
+        <div class="side-carousel-item">
+            <img src="images/Veggie Pizza.jpg" alt="Veggie Pizza">
+        </div>
+
+        <div class="side-carousel-item">
+            <img src="images/Four Cheese Pizza.jpg" alt="Four Cheese Pizza">
+        </div>
+        <div class="side-carousel-item">
+            <img src="images/Cannoli.jpg" alt="Cannoli">
+        </div>
+
+        <div class="side-carousel-item">
+            <img src="images/Tiramisu.jpg" alt="Tiramisu">
+        </div>
+
+        <div class="side-carousel-item">
+            <img src="images/Cheesecake.jpg" alt="Cheesecake">
+        </div>
+
+        <div class="side-carousel-item">
+            <img src="images/Chocolate Cake.jpg" alt="Chocolate Cake">
+        </div>
+
+        <div class="side-carousel-item">
+            <img src="images/Italian Cream Cake.jpg" alt="Italian Cream Cake">
+        </div>
+
+        <div class="side-carousel-item">
+            <img src="images/Chocolate Cannoli.jpg" alt="Chocolate Cannoli">
+        </div>
+		
+        <div class="side-carousel-item">
+            <img src="images/Gelato.jpg" alt="Gelato">
+        </div>
+
+        <div class="side-carousel-item">
+            <img src="images/Zeppole.jpg" alt="Zeppole">
+        </div>
+		
+        <div class="side-carousel-item">
+            <img src="images/Lemon Cake.jpg" alt="Lemon Cake">
+        </div>
+
+        <div class="side-carousel-item">
+            <img src="images/Chocolate Mousse.jpg" alt="Chocolate Mousse">
+        </div>
+        <div class="side-carousel-item">
+            <img src="images/Raspberry Lemonade.jpg" alt="Raspberry Lemonade">
+        </div>
+
+        <div class="side-carousel-item">
+            <img src="images/Lemonade.jpg" alt="Lemonade">
+        </div>
+
+        <div class="side-carousel-item">
+            <img src="images/Sweet Tea.jpg" alt="Sweet Tea">
+        </div>
+
+        <div class="side-carousel-item">
+            <img src="images/Unsweetened Tea.jpg" alt="Unsweetened Tea">
+        </div>
+
+        <div class="side-carousel-item">
+            <img src="images/Iced Tea.jpg" alt="Iced Tea">
+        </div>
+
+        <div class="side-carousel-item">
+            <img src="images/Italian Soda.jpg" alt="Italian Soda">
+        </div>
+		
+        <div class="side-carousel-item">
+            <img src="images/Strawberry Soda.jpg" alt="Strawberry Soda">
+        </div>
+
+        <div class="side-carousel-item">
+            <img src="images/Peach Iced Tea.jpg" alt="Peach Iced Tea">
+        </div>
+		
+        <div class="side-carousel-item">
+            <img src="images/Sparkling Water.jpg" alt="Sparkling Water">
+        </div>
+
+        <div class="side-carousel-item">
+            <img src="images/Fountain Drinks.jpg" alt="Fountain Drinks">
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =================================
+     RIGHT AUTOMATIC CAROUSEL
+     ================================= -->
+
+<div class="side-carousel right">
+
+    <div class="side-carousel-track">
+
+        <div class="side-carousel-item">
+            <img src="images/Raspberry Lemonade.jpg" alt="Raspberry Lemonade">
+        </div>
+		
+        <div class="side-carousel-item">
+            <img src="images/Garlic Knots.jpg" alt="Garlic Knots">
+        </div>
+		
+        <div class="side-carousel-item">
+            <img src="images/Mozzarella Sticks.jpg" alt="Mozzarella Sticks">
+        </div>
+
+        <div class="side-carousel-item">
+            <img src="images/Bruschetta.jpg" alt="Bruschetta">
+        </div>
+
+        <div class="side-carousel-item">
+            <img src="images/Fried Ravioli.jpg" alt="Fried Ravioli">
+        </div>
+
+        <div class="side-carousel-item">
+            <img src="images/Garlic Bread.jpg" alt="Garlic Bread">
+		
+        </div>
+        <div class="side-carousel-item">
+            <img src="images/Stuffed Mushrooms.jpg" alt="Stuffed Mushrooms">
+        </div>
+
+        <div class="side-carousel-item">
+            <img src="images/Caprese Salad.jpg" alt="Caprese Salad">
+        </div>
+
+        <div class="side-carousel-item">
+            <img src="images/Fried Calamari.jpg" alt="Fried Calamari">
+        </div>
+
+        <div class="side-carousel-item">
+            <img src="images/Meatballs.jpg" alt="Meatballs">
+        </div>
+
+        <div class="side-carousel-item">
+            <img src="images/Antipasto Platter.jpg" alt="Antipasto Platter">
+        </div>
+        <div class="side-carousel-item">
+            <img src="images/Meatball Sub.jpg" alt="Meatball Sub">
+        </div>
+
+        <div class="side-carousel-item">
+            <img src="images/Chicken Parmesan Sub.jpg" alt="Chicken Parmesan Sub">
+        </div>
+
+        <div class="side-carousel-item">
+            <img src="images/Italian Sub.jpg" alt="Italian Sub">
+        </div>
+
+        <div class="side-carousel-item">
+            <img src="images/Chicken Pesto Sandwich.jpg" alt="Chicken Pesto Sandwich">
+        </div>
+
+        <div class="side-carousel-item">
+            <img src="images/Grilled Chicken Sandwich.jpg" alt="Grilled Chicken Sandwich">
+        </div>
+
+        <div class="side-carousel-item">
+            <img src="images/Italian Sausage Sub.jpg" alt="Italian Sausage Sub">
+        </div>
+		
+        <div class="side-carousel-item">
+            <img src="images/Eggplant Parmesan Sub.jpg" alt="Eggplant Parmesan Sub">
+        </div>
+
+        <div class="side-carousel-item">
+            <img src="images/Caprese Sandwich.jpg" alt="Caprese Sandwich">
+        </div>
+		
+        <div class="side-carousel-item">
+            <img src="images/Chicken Mozzarella Sandwich.jpg" alt="Chicken Mozzarella Sandwich">
+        </div>
+
+        <div class="side-carousel-item">
+            <img src="images/Philly Cheesesteak.jpg" alt="Philly Cheesesteak">
+        </div>
+        <div class="side-carousel-item">
+            <img src="images/Fettuccine Alfredo.jpg" alt="Fettuccine Alfredo">
+        </div>
+
+        <div class="side-carousel-item">
+            <img src="images/Spaghetti Meatballs.jpg" alt="Spaghetti Meatballs">
+        </div>
+
+        <div class="side-carousel-item">
+            <img src="images/Chicken Alfredo.jpg" alt="Chicken Alfredo">
+        </div>
+
+        <div class="side-carousel-item">
+            <img src="images/Creamy Salmon Pasta.jpg" alt="Creamy Salmon Pasta">
+        </div>
+
+        <div class="side-carousel-item">
+            <img src="images/Chicken Parmesan Pasta.jpg" alt="Chicken Parmesan Pasta">
+        </div>
+
+        <div class="side-carousel-item">
+            <img src="images/Penne Arrabbiata.jpg" alt="Penne Arrabbiata">
+        </div>
+		
+        <div class="side-carousel-item">
+            <img src="images/Baked Ziti.jpg" alt="Baked Ziti">
+        </div>
+
+        <div class="side-carousel-item">
+            <img src="images/Lasagna.jpg" alt="Lasagna">
+        </div>
+		
+        <div class="side-carousel-item">
+            <img src="images/Cheese Ravioli.jpg" alt="Cheese Ravioli">
+        </div>
+
+        <div class="side-carousel-item">
+            <img src="images/Broccoli Chicken Pasta.jpg" alt="Broccoli Chicken Pasta">
+        </div>
+        <div class="side-carousel-item">
+            <img src="images/Cheese Pizza.jpg" alt="Cheese Pizza">
+        </div>
+
+        <div class="side-carousel-item">
+            <img src="images/Pepperoni Pizza.jpg" alt="Pepperoni Pizza">
+        </div>
+
+        <div class="side-carousel-item">
+            <img src="images/Margherita Pizza.jpg" alt="Margherita Pizza">
+        </div>
+
+        <div class="side-carousel-item">
+            <img src="images/Meat Lovers Pizza.jpg" alt="Meat Lovers Pizza">
+        </div>
+
+        <div class="side-carousel-item">
+            <img src="images/Supreme Pizza.jpg" alt="Supreme Pizza">
+        </div>
+
+        <div class="side-carousel-item">
+            <img src="images/Chicken Alfredo Pizza.jpg" alt="Chicken Alfredo Pizza">
+        </div>
+		
+        <div class="side-carousel-item">
+            <img src="images/BBQ Chicken Pizza.jpg" alt="BBQ Chicken Pizza">
+        </div>
+
+        <div class="side-carousel-item">
+            <img src="images/Buffalo Chicken Pizza.jpg" alt="Buffalo Chicken Pizza">
+        </div>
+		
+        <div class="side-carousel-item">
+            <img src="images/Veggie Pizza.jpg" alt="Veggie Pizza">
+        </div>
+
+        <div class="side-carousel-item">
+            <img src="images/Four Cheese Pizza.jpg" alt="Four Cheese Pizza">
+        </div>
+        <div class="side-carousel-item">
+            <img src="images/Cannoli.jpg" alt="Cannoli">
+        </div>
+
+        <div class="side-carousel-item">
+            <img src="images/Tiramisu.jpg" alt="Tiramisu">
+        </div>
+
+        <div class="side-carousel-item">
+            <img src="images/Cheesecake.jpg" alt="Cheesecake">
+        </div>
+
+        <div class="side-carousel-item">
+            <img src="images/Chocolate Cake.jpg" alt="Chocolate Cake">
+        </div>
+
+        <div class="side-carousel-item">
+            <img src="images/Italian Cream Cake.jpg" alt="Italian Cream Cake">
+        </div>
+
+        <div class="side-carousel-item">
+            <img src="images/Chocolate Cannoli.jpg" alt="Chocolate Cannoli">
+        </div>
+		
+        <div class="side-carousel-item">
+            <img src="images/Gelato.jpg" alt="Gelato">
+        </div>
+
+        <div class="side-carousel-item">
+            <img src="images/Zeppole.jpg" alt="Zeppole">
+        </div>
+		
+        <div class="side-carousel-item">
+            <img src="images/Lemon Cake.jpg" alt="Lemon Cake">
+        </div>
+
+        <div class="side-carousel-item">
+            <img src="images/Chocolate Mousse.jpg" alt="Chocolate Mousse">
+        </div>
+        <div class="side-carousel-item">
+            <img src="images/Raspberry Lemonade.jpg" alt="Raspberry Lemonade">
+        </div>
+
+        <div class="side-carousel-item">
+            <img src="images/Lemonade.jpg" alt="Lemonade">
+        </div>
+
+        <div class="side-carousel-item">
+            <img src="images/Sweet Tea.jpg" alt="Sweet Tea">
+        </div>
+
+        <div class="side-carousel-item">
+            <img src="images/Unsweetened Tea.jpg" alt="Unsweetened Tea">
+        </div>
+
+        <div class="side-carousel-item">
+            <img src="images/Iced Tea.jpg" alt="Iced Tea">
+        </div>
+
+        <div class="side-carousel-item">
+            <img src="images/Italian Soda.jpg" alt="Italian Soda">
+        </div>
+		
+        <div class="side-carousel-item">
+            <img src="images/Strawberry Soda.jpg" alt="Strawberry Soda">
+        </div>
+
+        <div class="side-carousel-item">
+            <img src="images/Peach Iced Tea.jpg" alt="Peach Iced Tea">
+        </div>
+		
+        <div class="side-carousel-item">
+            <img src="images/Sparkling Water.jpg" alt="Sparkling Water">
+        </div>
+
+        <div class="side-carousel-item">
+            <img src="images/Fountain Drinks.jpg" alt="Fountain Drinks">
+        </div>
+    </div>
+	<p>
+	
+	</p>
+</div>
+
+		<!--<div id="pictureHolder">
+		<div class="picture"><img src="images/Mozzarella-200.jpg" width="200" height="200" alt="Mozzarella"></div>
+		<div class="picture"><img src="images/Sub-200.jpg" width="200" height="200" alt="Sub"></div>
+		<div class="picture"><img src="images/Pasta-200.jpg" width="200" height="200" alt="Pasta"></div>
+		<div class="picture"><img src="images/Pizza-152.jpg" width="200" height="152" alt="Pizza"></div>
+		<div class="picture"><img src="images/Canoli-133.jpg" width="200" height="133" alt="Cannoli"></div>
+		<div class="picture"><img src="images/Raspberry-Lemonade-200.jpg" width="200" height="200" alt="Raspberry Lemonade"></div>-->
+		<div id="textHolder">
+			<h2>
+			Food that leaves you smiling
+			</h2>	
+		</div>
+		
+		<!-- Scroll Section 1 -->
+<div class="scroll-gallery">
+    <div class="scroll-gallery-track">
+
+        <div class="scroll-gallery-item">
+            <img src="images/Garlic Knots.jpg" alt="Garlic Knots">
+        </div>
+
+        <div class="scroll-gallery-item">
+            <img src="images/Mozzarella Sticks.jpg" alt="Mozzarella Sticks">
+        </div>
+
+        <div class="scroll-gallery-item">
+            <img src="images/Bruschetta.jpg" alt="Bruschetta">
+        </div>
+
+        <div class="scroll-gallery-item">
+            <img src="images/Fried Ravioli.jpg" alt="Fried Ravioli">
+        </div>
+
+        <div class="scroll-gallery-item">
+            <img src="images/Garlic Bread.jpg" alt="Garlic Bread">
+		
+        </div>
+		<div class="scroll-gallery-item">
+            <img src="images/Stuffed Mushrooms.jpg" alt="Stuffed Mushrooms">
+        </div>
+
+        <div class="scroll-gallery-item">
+            <img src="images/Caprese Salad.jpg" alt="Caprese Salad">
+        </div>
+
+        <div class="scroll-gallery-item">
+            <img src="images/Fried Calamari.jpg" alt="Fried Calamari">
+        </div>
+
+        <div class="scroll-gallery-item">
+            <img src="images/Meatballs.jpg" alt="Meatballs">
+        </div>
+
+        <div class="scroll-gallery-item">
+            <img src="images/Antipasto Platter.jpg" alt="Antipasto Platter">
+        </div>
+    </div>
+</div>
+
+
+<!-- Scroll Section 2 -->
+<div class="scroll-gallery">
+    <div class="scroll-gallery-track">
+
+        <div class="scroll-gallery-item">
+            <img src="images/Meatball Sub.jpg" alt="Meatball Sub">
+        </div>
+
+        <div class="scroll-gallery-item">
+            <img src="images/Chicken Parmesan Sub.jpg" alt="Chicken Parmesan Sub">
+        </div>
+
+        <div class="scroll-gallery-item">
+            <img src="images/Italian Sub.jpg" alt="Italian Sub">
+        </div>
+
+        <div class="scroll-gallery-item">
+            <img src="images/Chicken Pesto Sandwich.jpg" alt="Chicken Pesto Sandwich">
+        </div>
+
+        <div class="scroll-gallery-item">
+            <img src="images/Grilled Chicken Sandwich.jpg" alt="Grilled Chicken Sandwich">
+        </div>
+
+        <div class="scroll-gallery-item">
+            <img src="images/Italian Sausage Sub.jpg" alt="Italian Sausage Sub">
+        </div>
+		
+		<div class="scroll-gallery-item">
+            <img src="images/Eggplant Parmesan Sub.jpg" alt="Eggplant Parmesan Sub">
+        </div>
+
+        <div class="scroll-gallery-item">
+            <img src="images/Caprese Sandwich.jpg" alt="Caprese Sandwich">
+        </div>
+		
+		<div class="scroll-gallery-item">
+            <img src="images/Chicken Mozzarella Sandwich.jpg" alt="Chicken Mozzarella Sandwich">
+        </div>
+
+        <div class="scroll-gallery-item">
+            <img src="images/Philly Cheesesteak.jpg" alt="Philly Cheesesteak">
+        </div>
+
+    </div>
+</div>
+
+
+<!-- Scroll Section 3 -->
+<div class="scroll-gallery">
+    <div class="scroll-gallery-track">
+
+        <div class="scroll-gallery-item">
+            <img src="images/Fettuccine Alfredo.jpg" alt="Fettuccine Alfredo">
+        </div>
+
+        <div class="scroll-gallery-item">
+            <img src="images/Spaghetti Meatballs.jpg" alt="Spaghetti Meatballs">
+        </div>
+
+        <div class="scroll-gallery-item">
+            <img src="images/Chicken Alfredo.jpg" alt="Chicken Alfredo">
+        </div>
+
+        <div class="scroll-gallery-item">
+            <img src="images/Creamy Salmon Pasta.jpg" alt="Creamy Salmon Pasta">
+        </div>
+
+        <div class="scroll-gallery-item">
+            <img src="images/Chicken Parmesan Pasta.jpg" alt="Chicken Parmesan Pasta">
+        </div>
+
+        <div class="scroll-gallery-item">
+            <img src="images/Penne Arrabbiata.jpg" alt="Penne Arrabbiata">
+        </div>
+		
+		<div class="scroll-gallery-item">
+            <img src="images/Baked Ziti.jpg" alt="Baked Ziti">
+        </div>
+
+        <div class="scroll-gallery-item">
+            <img src="images/Lasagna.jpg" alt="Lasagna">
+        </div>
+		
+		<div class="scroll-gallery-item">
+            <img src="images/Cheese Ravioli.jpg" alt="Cheese Ravioli">
+        </div>
+
+        <div class="scroll-gallery-item">
+            <img src="images/Broccoli Chicken Pasta.jpg" alt="Broccoli Chicken Pasta">
+        </div>
+
+    </div>
+</div>
+
+
+<!-- Scroll Section 4 -->
+<div class="scroll-gallery">
+    <div class="scroll-gallery-track">
+
+        <div class="scroll-gallery-item">
+            <img src="images/Cheese Pizza.jpg" alt="Cheese Pizza">
+        </div>
+
+        <div class="scroll-gallery-item">
+            <img src="images/Pepperoni Pizza.jpg" alt="Pepperoni Pizza">
+        </div>
+
+        <div class="scroll-gallery-item">
+            <img src="images/Margherita Pizza.jpg" alt="Margherita Pizza">
+        </div>
+
+        <div class="scroll-gallery-item">
+            <img src="images/Meat Lovers Pizza.jpg" alt="Meat Lovers Pizza">
+        </div>
+
+        <div class="scroll-gallery-item">
+            <img src="images/Supreme Pizza.jpg" alt="Supreme Pizza">
+        </div>
+
+        <div class="scroll-gallery-item">
+            <img src="images/Chicken Alfredo Pizza.jpg" alt="Chicken Alfredo Pizza">
+        </div>
+		
+		<div class="scroll-gallery-item">
+            <img src="images/BBQ Chicken Pizza.jpg" alt="BBQ Chicken Pizza">
+        </div>
+
+        <div class="scroll-gallery-item">
+            <img src="images/Buffalo Chicken Pizza.jpg" alt="Buffalo Chicken Pizza">
+        </div>
+		
+		<div class="scroll-gallery-item">
+            <img src="images/Veggie Pizza.jpg" alt="Veggie Pizza">
+        </div>
+
+        <div class="scroll-gallery-item">
+            <img src="images/Four Cheese Pizza.jpg" alt="Four Cheese Pizza">
+        </div>
+
+    </div>
+</div>
+
+
+<!-- Scroll Section 5 -->
+<div class="scroll-gallery">
+    <div class="scroll-gallery-track">
+
+        <div class="scroll-gallery-item">
+            <img src="images/Cannoli.jpg" alt="Cannoli">
+        </div>
+
+        <div class="scroll-gallery-item">
+            <img src="images/Tiramisu.jpg" alt="Tiramisu">
+        </div>
+
+        <div class="scroll-gallery-item">
+            <img src="images/Cheesecake.jpg" alt="Cheesecake">
+        </div>
+
+        <div class="scroll-gallery-item">
+            <img src="images/Chocolate Cake.jpg" alt="Chocolate Cake">
+        </div>
+
+        <div class="scroll-gallery-item">
+            <img src="images/Italian Cream Cake.jpg" alt="Italian Cream Cake">
+        </div>
+
+        <div class="scroll-gallery-item">
+            <img src="images/Chocolate Cannoli.jpg" alt="Chocolate Cannoli">
+        </div>
+		
+		<div class="scroll-gallery-item">
+            <img src="images/Gelato.jpg" alt="Gelato">
+        </div>
+
+        <div class="scroll-gallery-item">
+            <img src="images/Zeppole.jpg" alt="Zeppole">
+        </div>
+		
+		<div class="scroll-gallery-item">
+            <img src="images/Lemon Cake.jpg" alt="Lemon Cake">
+        </div>
+
+        <div class="scroll-gallery-item">
+            <img src="images/Chocolate Mousse.jpg" alt="Chocolate Mousse">
+        </div>
+
+    </div>
+</div>
+		
+<div class="scroll-gallery">
+    <div class="scroll-gallery-track">
+
+        <div class="scroll-gallery-item">
+            <img src="images/Raspberry Lemonade.jpg" alt="Raspberry Lemonade">
+        </div>
+
+        <div class="scroll-gallery-item">
+            <img src="images/Lemonade.jpg" alt="Lemonade">
+        </div>
+
+        <div class="scroll-gallery-item">
+            <img src="images/Sweet Tea.jpg" alt="Sweet Tea">
+        </div>
+
+        <div class="scroll-gallery-item">
+            <img src="images/Unsweetened Tea.jpg" alt="Unsweetened Tea">
+        </div>
+
+        <div class="scroll-gallery-item">
+            <img src="images/Iced Tea.jpg" alt="Iced Tea">
+        </div>
+
+        <div class="scroll-gallery-item">
+            <img src="images/Italian Soda.jpg" alt="Italian Soda">
+        </div>
+		
+		<div class="scroll-gallery-item">
+            <img src="images/Strawberry Soda.jpg" alt="Strawberry Soda">
+        </div>
+
+        <div class="scroll-gallery-item">
+            <img src="images/Peach Iced Tea.jpg" alt="Peach Iced Tea">
+        </div>
+		
+		<div class="scroll-gallery-item">
+            <img src="images/Sparkling Water.jpg" alt="Sparkling Water">
+        </div>
+
+        <div class="scroll-gallery-item">
+            <img src="images/Fountain Drinks.jpg" alt="Fountain Drinks">
+        </div>
+
+    </div>
+</div>
+
+<!--			<p>
+Appetizers - Garlic Knots, Mozzarella Sticks, Bruschetta, Fried Ravioli, Garlic Bread, Stuffed Mushrooms, Caprese Salad, Calamari, Meatballs, Antipasto Platter
+</p>
+
+<p>
+Sandwiches - Meatball Sub, Chicken Parmesan Sub, Italian Sub, Chicken Pesto Sandwich, Grilled Chicken Sandwich, Italian Sausage Sub, Eggplant Parmesan Sub, Caprese Sandwich, Chicken Mozzarella Sandwich, Philly Cheesesteak
+</p>
+
+<p>
+Pasta - Fettuccine Alfredo, Spaghetti &amp; Meatballs, Chicken Alfredo, Creamy Salmon Pasta, Chicken Parmesan Pasta, Penne Arrabbiata, Baked Ziti, Lasagna, Cheese Ravioli, Broccoli Chicken Pasta
+</p>
+
+<p>
+Pizza - Cheese Pizza, Pepperoni Pizza, Margherita Pizza, Meat Lovers Pizza, Supreme Pizza, Chicken Alfredo Pizza, BBQ Chicken Pizza, Buffalo Chicken Pizza, Veggie Pizza, Four Cheese Pizza
+</p>
+
+<p>
+Dessert - Cannoli, Tiramisu, Cheesecake, Chocolate Cake, Italian Cream Cake, Chocolate Cannoli, Gelato, Zeppole, Lemon Cake, Chocolate Mousse
+</p>
+
+<p>
+Drinks - Raspberry Lemonade, Classic Lemonade, Sweet Tea, Unsweetened Tea, Iced Tea, Italian Soda, Strawberry Soda, Peach Iced Tea, Sparkling Water, Fountain Drinks
+</p>-->
+			</main>
+	<footer>&copy; The Italian Table, Inc., 2026</footer>
+	
+	
+	
+	<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+	<script>
+$(function () {
+
+    $('.side-carousel').each(function () {
+
+        const $track = $(this).find('.side-carousel-track');
+
+        // Save the original pictures
+        const images = $track.children().toArray();
+
+        // Shuffle the pictures randomly
+        function shuffle(array) {
+
+            const shuffled = [...array];
+
+            for (let i = shuffled.length - 1; i > 0; i--) {
+
+                const j = Math.floor(Math.random() * (i + 1));
+
+                [shuffled[i], shuffled[j]] =
+                [shuffled[j], shuffled[i]];
+
+            }
+
+            return shuffled;
+        }
+
+        // Create a randomized sequence
+        const firstShuffle = shuffle(images);
+
+        // Duplicate the shuffled sequence for continuous scrolling
+        const secondShuffle = shuffle(images);
+
+        // Empty the original track
+        $track.empty();
+
+        // Add the randomized pictures
+        [...firstShuffle, ...secondShuffle].forEach(function (image) {
+
+            $track.append(image);
+
+        });
+
+    });
+
+});
+</script>
+<script>
+function toggleMenu() {
+    const menu = document.getElementById("extraMenu");
+    const button = document.querySelector(".menu-button");
+
+    menu.classList.toggle("show");
+
+    button.setAttribute(
+        "aria-expanded",
+        menu.classList.contains("show")
+    );
+}
+</script>
+	<script>
+$(document).ready(function () {
+
+    $('.scroll-gallery-item img').each(function () {
+
+        // Get the alt text from the image
+        const caption = $(this).attr('alt');
+
+        // Create a caption underneath the image
+        $('<p></p>')
+            .addClass('image-caption')
+            .text(caption)
+            .insertAfter(this);
+
+    });
+
+});
+</script>
+</body>
+</html>

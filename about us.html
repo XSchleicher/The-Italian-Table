@@ -1,0 +1,298 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>About Us</title>
+
+<link rel="stylesheet" href="css/styles.css">
+<link rel="stylesheet" href="https://use.typekit.net/mil3frr.css">
+<link rel="stylesheet" href="https://use.typekit.net/fzr4bfx.css">
+
+<style>
+    body {
+        margin: 0;
+    }
+
+    header {
+        width: 100%;
+        height: 100px;
+        text-align: center;
+        font-size: 45px;
+        line-height: 1.8;
+        font-weight: bolder;
+    }
+
+    nav {
+        width: 100%;
+        height: 60px;
+        background-color: darkred;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: antiquewhite;
+    }
+
+    .dropdown {
+        position: relative;
+        display: flex;
+        align-items: center;
+        height: 60px;
+        margin-left: 2%;
+        margin-right: 2%;
+    }
+
+    .dropbtn {
+        display: block;
+    }
+
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        background-color: darkred;
+        min-width: 120px;
+        z-index: 10;
+    }
+
+    .dropdown-content a {
+        display: block;
+        padding: 12px 16px;
+        margin: 0;
+        color: antiquewhite;
+        text-align: center;
+    }
+
+.dropdown-content a:hover {
+    background-color: darkred;
+    color: darkolivegreen;
+    text-decoration: none;
+    opacity: 1;
+}
+
+    .dropdown:hover .dropdown-content {
+        display: block;
+    }
+
+    a {
+        margin-left: 2%;
+        margin-right: 2%;
+        text-decoration: none;
+        color: antiquewhite;
+    }
+
+    a:hover {
+        color: darkolivegreen;
+        text-decoration: underline;
+    }
+
+    main {
+        width: 80%;
+        height: auto;
+        min-height: 900px;
+        margin: 0 auto;
+        padding: 20px;
+        box-sizing: border-box;
+        position: relative;
+    }
+    #pictureHolder {
+        width: 80%;
+        max-width: 800px;
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    #pictureHolder img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    #textHolder {
+        width: 100%;
+        margin: 30px auto 0 auto;
+        height: auto;
+        box-sizing: border-box;
+    }
+
+    .about-section {
+        margin-bottom: 30px;
+    }
+
+    .about-section h2 {
+        margin-bottom: 5px;
+    }
+
+    .about-section p {
+        margin-top: 5px;
+    }
+
+    footer {
+        width: 100%;
+        height: 300px;
+        padding: 20px;
+        box-sizing: border-box;
+    }
+
+    @media screen and (max-width: 700px) {
+
+        header {
+            height: auto;
+            font-size: 30px;
+            padding: 20px 0;
+            line-height: 1.2;
+        }
+
+        nav {
+            height: auto;
+            padding: 15px 0;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            margin: 5px 10px;
+        }
+
+        main {
+            width: 95%;
+            height: auto;
+        }
+
+        #pictureHolder {
+            width: 100%;
+            height: auto;
+        }
+
+        #textHolder {
+            width: 100%;
+            height: auto;
+            margin: 30px auto 0 auto;
+            padding: 20px;
+        }
+
+        footer {
+            height: auto;
+        }
+    }
+</style>
+</head>
+
+<body>
+
+<header>About Us</header>
+
+<nav>-
+    <a href="index.html">Home</a>-
+
+    <div class="dropdown">
+        <a href="leadership.html" class="dropbtn">Leadership</a>
+
+        <div class="dropdown-content">
+            <a href="ceo.html">CEO</a>
+            <a href="smm.html">SMM</a>
+            <a href="coo.html">COO</a>
+            <a href="cfo.html">CFO</a>
+        </div>
+    </div>
+
+    -<a href="locations.html">Locations</a>-
+</nav>
+
+<main>
+
+    <!-- Hamburger menu -->
+
+    <div class="site-menu">
+
+        <button class="menu-button" onclick="toggleMenu()"
+                aria-label="Open menu" aria-expanded="false"
+                aria-controls="extraMenu">
+            ☰
+        </button>
+
+    <div class="site-menu-content" id="extraMenu">
+    	<a href="about us.html">About Us</a>
+    	<a href="careers.html">Careers</a>
+    	<a href="community-involvement.html">Community Involvement</a>
+    	<a href="contact.html">Contact Us</a>
+    	<a href="customer-reviews.html">Customer Reviews</a>
+    	<a href="dietary-options.html">Dietary Options</a>
+		<a href="faq.html">FAQ</a>
+	</div>
+
+    </div>
+    <div id="textHolder">
+
+        <div class="about-section">
+            <h2>Our Story</h2>
+            <p>
+                <p>
+The Italian Table was founded with the goal of bringing people together through great food and hospitality. Inspired by traditional Italian cooking, we strive to create a welcoming place where families and friends can enjoy a memorable meal.
+				</p>
+            </p>
+        </div>
+
+        <div class="about-section">
+            <h2>Our Mission</h2>
+            <p>
+                <p>
+Our mission is to provide delicious food and excellent customer service in a welcoming environment. We work hard to make every visit to The Italian Table an enjoyable experience.
+				</p>
+            </p>
+        </div>
+
+        <div class="about-section">
+            <h2>Our Values</h2>
+            <p>
+                <p>
+At The Italian Table, we value quality, teamwork, hospitality, and customer satisfaction. We believe that treating our employees and customers with respect is essential to building a successful restaurant.
+				</p>
+            </p>
+        </div>
+
+        <div class="about-section">
+            <h2>What Makes Us Different</h2>
+            <p>
+                <p>
+We combine traditional Italian flavors with a comfortable atmosphere and friendly service. Our goal is to provide consistent quality and a memorable dining experience at every location.
+				</p>
+            </p>
+        </div>
+
+        <div class="about-section">
+            <h2>Our Commitment to Customers</h2>
+            <p>
+                <p>
+Our customers are at the center of everything we do. We are committed to serving great food, providing friendly service, and making every guest feel welcome.
+				</p>
+            </p>
+        </div>
+		<div class="about-section">
+    		<h2>Growing Throughout the Treasure Coast</h2>
+    		<p>
+        		<p>
+The Italian Table is proud to serve communities throughout the Treasure Coast of Florida. With locations in Port St. Lucie, Stuart, Fort Pierce, and Vero Beach, we continue to share our passion for Italian food with more customers.
+				</p>
+    		</p>
+</div>
+    </div>
+
+</main>
+
+<footer>&copy; The Italian Table, Inc., 2026</footer>
+
+<script>
+function toggleMenu() {
+    const menu = document.getElementById("extraMenu");
+    const button = document.querySelector(".menu-button");
+
+    menu.classList.toggle("show");
+
+    button.setAttribute(
+        "aria-expanded",
+        menu.classList.contains("show")
+    );
+}
+</script>
+
+</body>
+</html>

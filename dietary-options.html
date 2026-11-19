@@ -1,0 +1,603 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dietary Options</title>
+<link rel="stylesheet" href="css/styles.css">
+<link rel="stylesheet" href="https://use.typekit.net/mil3frr.css">
+<link rel="stylesheet" href="https://use.typekit.net/fzr4bfx.css">
+
+<style>
+
+    body {
+        margin: 0;
+    }
+
+    header {
+        width: 100%;
+        height: 100px;
+        text-align: center;
+        font-size: 45px;
+        line-height: 1.8;
+        font-weight: bolder;
+    }
+
+    nav {
+        width: 100%;
+        height: 60px;
+        background-color: darkred;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: antiquewhite;
+    }
+
+    .dropdown {
+        position: relative;
+        display: flex;
+        align-items: center;
+        height: 60px;
+        margin-left: 2%;
+        margin-right: 2%;
+    }
+
+    .dropbtn {
+        display: block;
+    }
+
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        background-color: darkred;
+        min-width: 120px;
+        z-index: 10;
+    }
+
+    .dropdown-content a {
+        display: block;
+        padding: 12px 16px;
+        margin: 0;
+        color: antiquewhite;
+        text-align: center;
+    }
+
+    .dropdown-content a:hover {
+        background-color: darkred;
+        color: darkolivegreen;
+        text-decoration: none;
+        opacity: 1;
+    }
+
+    .dropdown:hover .dropdown-content,
+    .dropdown:focus-within .dropdown-content {
+        display: block;
+    }
+
+    a {
+        margin-left: 2%;
+        margin-right: 2%;
+        text-decoration: none;
+        color: antiquewhite;
+    }
+
+    a:hover {
+        color: darkolivegreen;
+        text-decoration: underline;
+    }
+
+    main {
+        width: 80%;
+        height: auto;
+        min-height: 900px;
+        margin: 0 auto;
+        padding: 20px;
+        box-sizing: border-box;
+        position: relative;
+    }
+
+    #textHolder {
+        width: 100%;
+        margin: 30px auto 0 auto;
+        height: auto;
+        box-sizing: border-box;
+        color: antiquewhite;
+    }
+
+    .page-intro {
+        text-align: center;
+        margin-bottom: 40px;
+    }
+
+    .page-intro h1 {
+        font-family: "Apotek", sans-serif;
+        font-size: 32px;
+        margin-bottom: 12px;
+    }
+
+    .page-intro p {
+        max-width: 750px;
+        margin: 0 auto;
+        line-height: 1.7;
+    }
+
+    .page-section {
+        margin-bottom: 35px;
+    }
+
+    .page-section h2 {
+        margin-bottom: 10px;
+        font-family: "Apotek", sans-serif;
+    }
+
+    .page-section p {
+        margin-top: 5px;
+        line-height: 1.7;
+    }
+
+    /* Food Allergy Guide */
+
+    .allergy-guide {
+        margin: 45px 0;
+    }
+
+    .allergy-guide > h2 {
+        text-align: center;
+        font-family: "Apotek", sans-serif;
+        font-size: 28px;
+        margin-bottom: 12px;
+    }
+
+    .allergy-intro {
+        text-align: center;
+        max-width: 750px;
+        margin: 0 auto 30px auto;
+        line-height: 1.7;
+    }
+
+    .allergy-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 18px;
+    }
+
+    .allergy-card {
+        background-color: darkred;
+        border: 1px solid antiquewhite;
+        padding: 22px;
+        box-sizing: border-box;
+        min-height: 155px;
+    }
+
+    .allergy-card h3 {
+        color: lemonchiffon;
+        font-family: "Apotek", sans-serif;
+        font-size: 21px;
+        margin-top: 0;
+        margin-bottom: 12px;
+    }
+
+    .allergy-card p {
+        color: antiquewhite;
+        line-height: 1.6;
+        margin: 0;
+    }
+
+    /* Safety Notice */
+
+    .safety-notice {
+        background-color: darkred;
+        border-left: 6px solid lemonchiffon;
+        padding: 25px;
+        margin: 45px 0;
+        box-sizing: border-box;
+    }
+
+    .safety-notice h2 {
+        color: lemonchiffon;
+        font-family: "Apotek", sans-serif;
+        margin-top: 0;
+        margin-bottom: 12px;
+    }
+
+    .safety-notice p {
+        color: antiquewhite;
+        line-height: 1.7;
+        margin-bottom: 0;
+    }
+
+    .before-order {
+        margin: 40px 0;
+        padding: 25px;
+        background-color: antiquewhite;
+        color: darkolivegreen;
+        box-sizing: border-box;
+    }
+
+    .before-order h2 {
+        font-family: "Apotek", sans-serif;
+        color: darkred;
+        margin-top: 0;
+    }
+
+    .before-order p {
+        line-height: 1.7;
+        margin-bottom: 0;
+    }
+
+    .content-link {
+        text-decoration: underline;
+        margin: 0;
+        color: lemonchiffon;
+    }
+
+    .content-link:hover {
+        color: antiquewhite;
+    }
+
+.contact-link {
+    display: inline-block;
+    margin-left: 0;
+    padding: 12px 20px;
+    background-color: darkred;
+    color: antiquewhite;
+    text-decoration: none;
+    opacity: 1;
+    border: none;
+    border-radius: 0;
+}
+
+.contact-link:hover {
+    background-color: darkred;
+    color: darkolivegreen;
+    text-decoration: none;
+    opacity: 1;
+}
+
+    a:focus-visible,
+    button:focus-visible {
+        outline: 3px solid lemonchiffon;
+        outline-offset: 3px;
+    }
+
+    footer {
+        width: 100%;
+        height: 300px;
+        padding: 20px;
+        box-sizing: border-box;
+    }
+
+    @media screen and (max-width: 900px) {
+        .allergy-grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    @media screen and (max-width: 700px) {
+
+        header {
+            height: auto;
+            font-size: 30px;
+            padding: 20px 0;
+            line-height: 1.2;
+        }
+
+        nav {
+            height: auto;
+            padding: 15px 0;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            margin: 5px 10px;
+        }
+
+        main {
+            width: 95%;
+            height: auto;
+        }
+
+        #textHolder {
+            width: 100%;
+            height: auto;
+            margin: 30px auto 0 auto;
+            padding: 10px;
+        }
+
+        .page-intro h1 {
+            font-size: 27px;
+        }
+
+        .allergy-grid {
+            grid-template-columns: 1fr;
+            gap: 15px;
+        }
+
+        .allergy-card {
+            min-height: auto;
+        }
+
+        .safety-notice,
+        .before-order {
+            padding: 20px;
+        }
+
+        footer {
+            height: auto;
+        }
+    }
+
+</style>
+</head>
+
+<body>
+
+<header>Dietary Options</header>
+
+<nav>-
+    <a href="index.html">Home</a>-
+
+    <div class="dropdown">
+        <a href="leadership.html" class="dropbtn">Leadership</a>
+
+        <div class="dropdown-content">
+            <a href="ceo.html">CEO</a>
+            <a href="smm.html">SMM</a>
+            <a href="coo.html">COO</a>
+            <a href="cfo.html">CFO</a>
+        </div>
+    </div>
+
+    -<a href="locations.html">Locations</a>-
+</nav>
+
+<main>
+
+<div class="site-menu">
+
+    <button class="menu-button" onclick="toggleMenu()"
+            aria-label="Open menu"
+            aria-expanded="false"
+            aria-controls="extraMenu">☰</button>
+
+    <div class="site-menu-content" id="extraMenu">
+        <a href="about us.html">About Us</a>
+        <a href="careers.html">Careers</a>
+        <a href="community-involvement.html">Community Involvement</a>
+        <a href="contact.html">Contact Us</a>
+        <a href="customer-reviews.html">Customer Reviews</a>
+        <a href="dietary-options.html">Dietary Options</a>
+        <a href="faq.html">FAQ</a>
+    </div>
+
+</div>
+
+<div id="textHolder">
+
+    <section class="page-intro">
+
+        <h1>Dining With Dietary Needs</h1>
+
+        <p>
+            At The Italian Table, we want every guest to feel comfortable
+            asking questions about the food they order. Whether you have
+            a food allergy, dietary restriction, or ingredient concern,
+            our team is here to help you make informed dining decisions.
+        </p>
+
+    </section>
+
+
+    <section class="page-section">
+
+        <h2>Vegetarian Choices</h2>
+
+        <p>
+            Guests looking for vegetarian choices can ask our staff
+            which menu items may meet their needs and whether
+            modifications are available. Our menu includes a variety
+            of Italian-inspired dishes featuring vegetables, pasta,
+            and cheese.
+        </p>
+
+    </section>
+
+
+    <section class="page-section">
+
+        <h2>Gluten-Related Questions</h2>
+
+        <p>
+            If you avoid gluten, please ask staff about ingredients
+            and preparation methods before ordering. Pasta, bread,
+            sauces, and other prepared ingredients may contain gluten.
+            We cannot guarantee that a dish is gluten-free unless
+            its ingredients and preparation procedures have been verified.
+        </p>
+
+    </section>
+
+
+    <!-- FOOD ALLERGY GUIDE -->
+
+    <section class="allergy-guide">
+
+        <h2>Food Allergy Guide</h2>
+
+        <p class="allergy-intro">
+            Knowing what goes into your meal is important.
+            Some ingredients may not be immediately obvious,
+            so here are several common allergens to be aware of
+            when exploring our menu.
+        </p>
+
+
+        <div class="allergy-grid">
+
+            <div class="allergy-card">
+
+                <h3>Dairy</h3>
+
+                <p>
+                    Milk, cheese, butter, and cream may be found
+                    in pasta sauces, pizzas, desserts, and other
+                    Italian-inspired dishes.
+                </p>
+
+            </div>
+
+
+            <div class="allergy-card">
+
+                <h3>Gluten</h3>
+
+                <p>
+                    Wheat and gluten may be present in pasta,
+                    bread, breading, and certain sauces or
+                    prepared ingredients.
+                </p>
+
+            </div>
+
+
+            <div class="allergy-card">
+
+                <h3>Tree Nuts &amp; Peanuts</h3>
+
+                <p>
+                    Nuts may be present in certain ingredients
+                    or prepared foods. Cross-contact is also
+                    a possibility during food preparation.
+                </p>
+
+            </div>
+
+
+            <div class="allergy-card">
+
+                <h3>Eggs</h3>
+
+                <p>
+                    Eggs may be ingredients in certain pastas,
+                    breading, baked goods, desserts, and sauces.
+                </p>
+
+            </div>
+
+
+            <div class="allergy-card">
+
+                <h3>Shellfish</h3>
+
+                <p>
+                    Shellfish may be present in seafood dishes
+                    or through shared preparation equipment
+                    and cooking areas.
+                </p>
+
+            </div>
+
+
+            <div class="allergy-card">
+
+                <h3>Soy</h3>
+
+                <p>
+                    Soy may be found in certain sauces,
+                    processed ingredients, and prepared
+                    foods used in restaurant dishes.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- SAFETY NOTICE -->
+
+    <section class="safety-notice">
+
+        <h2>Your Safety Is Our Priority</h2>
+
+        <p>
+            Your health and safety matter to us. If you have
+            a food allergy, please inform a team member before
+            ordering. Our staff can help identify ingredients
+            and discuss available preparation accommodations.
+            Please be aware that cross-contact may occur,
+            and we cannot guarantee that any dish is completely
+            free of allergens.
+        </p>
+
+    </section>
+
+
+    <!-- BEFORE PLACING YOUR ORDER -->
+
+    <section class="before-order">
+
+        <h2>Before Placing Your Order</h2>
+
+        <p>
+            Always let your server know about any food allergies
+            or dietary restrictions. Ask about ingredients,
+            sauces, toppings, and preparation methods.
+            Please confirm all allergy-related information
+            directly with the restaurant before ordering.
+        </p>
+
+    </section>
+
+
+    <!-- CONTACT INFORMATION -->
+
+    <section class="page-section">
+
+        <h2>Questions Before You Visit?</h2>
+
+        <p>
+            Have a question about ingredients or dietary options?
+            We encourage you to reach out before your visit.
+            You can also find information about our restaurant
+            locations on our
+            <a class="content-link" href="locations.html">Locations page</a>.
+        </p>
+
+        <a class="contact-link" href="contact.html">
+            Questions About Allergens? Contact Us
+        </a>
+
+    </section>
+
+</div>
+
+</main>
+
+<footer>&copy; The Italian Table, Inc., 2026</footer>
+
+
+<script>
+
+function toggleMenu() {
+
+    const menu = document.getElementById("extraMenu");
+    const button = document.querySelector(".menu-button");
+
+    menu.classList.toggle("show");
+
+    button.setAttribute(
+        "aria-expanded",
+        menu.classList.contains("show")
+    );
+
+}
+
+</script>
+
+</body>
+</html>
+```

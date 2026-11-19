@@ -1,0 +1,303 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Careers</title>
+
+<link rel="stylesheet" href="css/styles.css">
+<link rel="stylesheet" href="https://use.typekit.net/mil3frr.css">
+<link rel="stylesheet" href="https://use.typekit.net/fzr4bfx.css">
+
+<style>
+    body {
+        margin: 0;
+    }
+
+    header {
+        width: 100%;
+        height: 100px;
+        text-align: center;
+        font-size: 45px;
+        line-height: 1.8;
+        font-weight: bolder;
+    }
+
+    nav {
+        width: 100%;
+        height: 60px;
+        background-color: darkred;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: antiquewhite;
+    }
+
+    .dropdown {
+        position: relative;
+        display: flex;
+        align-items: center;
+        height: 60px;
+        margin-left: 2%;
+        margin-right: 2%;
+    }
+
+    .dropbtn {
+        display: block;
+    }
+
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        background-color: darkred;
+        min-width: 120px;
+        z-index: 10;
+    }
+
+    .dropdown-content a {
+        display: block;
+        padding: 12px 16px;
+        margin: 0;
+        color: antiquewhite;
+        text-align: center;
+    }
+
+.dropdown-content a:hover {
+    background-color: darkred;
+    color: darkolivegreen;
+    text-decoration: none;
+    opacity: 1;
+}
+
+    .dropdown:hover .dropdown-content {
+        display: block;
+    }
+
+    a {
+        margin-left: 2%;
+        margin-right: 2%;
+        text-decoration: none;
+        color: antiquewhite;
+    }
+
+    a:hover {
+        color: darkolivegreen;
+        text-decoration: underline;
+    }
+
+    main {
+        width: 80%;
+        height: auto;
+        min-height: 900px;
+        margin: 0 auto;
+        padding: 20px;
+        box-sizing: border-box;
+        position: relative;
+    }
+    #pictureHolder {
+        width: 80%;
+        max-width: 800px;
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    #pictureHolder img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    #textHolder {
+        width: 100%;
+        margin: 30px auto 0 auto;
+        height: auto;
+        box-sizing: border-box;
+    }
+
+    .career-section {
+        margin-bottom: 30px;
+    }
+
+    .career-section h2 {
+        margin-bottom: 5px;
+    }
+
+    .career-section p {
+        margin-top: 5px;
+    }
+
+    .job {
+        margin-bottom: 25px;
+    }
+
+    footer {
+        width: 100%;
+        height: 300px;
+        padding: 20px;
+        box-sizing: border-box;
+    }
+
+    @media screen and (max-width: 700px) {
+
+        header {
+            height: auto;
+            font-size: 30px;
+            padding: 20px 0;
+            line-height: 1.2;
+        }
+
+        nav {
+            height: auto;
+            padding: 15px 0;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            margin: 5px 10px;
+        }
+
+        main {
+            width: 95%;
+            height: auto;
+        }
+
+        #pictureHolder {
+            width: 100%;
+            height: auto;
+        }
+
+        #textHolder {
+            width: 100%;
+            height: auto;
+            margin: 30px auto 0 auto;
+            padding: 20px;
+        }
+
+        footer {
+            height: auto;
+        }
+    }
+</style>
+</head>
+
+<body>
+
+<header>Careers</header>
+
+<nav>-
+    <a href="index.html">Home</a>-
+
+    <div class="dropdown">
+        <a href="leadership.html" class="dropbtn">Leadership</a>
+
+        <div class="dropdown-content">
+            <a href="ceo.html">CEO</a>
+            <a href="smm.html">SMM</a>
+            <a href="coo.html">COO</a>
+            <a href="cfo.html">CFO</a>
+        </div>
+    </div>
+
+    -<a href="locations.html">Locations</a>-
+</nav>
+
+<main>
+
+    <!-- Hamburger menu -->
+
+    <div class="site-menu">
+
+        <button class="menu-button" onclick="toggleMenu()"
+                aria-label="Open menu" aria-expanded="false"
+                aria-controls="extraMenu">
+            ☰
+        </button>
+
+    <div class="site-menu-content" id="extraMenu">
+    	<a href="about us.html">About Us</a>
+    	<a href="careers.html">Careers</a>
+    	<a href="community-involvement.html">Community Involvement</a>
+    	<a href="contact.html">Contact Us</a>
+    	<a href="customer-reviews.html">Customer Reviews</a>
+    	<a href="dietary-options.html">Dietary Options</a>
+		<a href="faq.html">FAQ</a>
+	</div>
+
+    </div>
+    <div id="textHolder">
+
+        <div class="career-section">
+            <h2>Join Our Team</h2>
+            <p>
+                The Italian Table is always looking for hardworking and dedicated individuals to become part of our team. We strive to create a welcoming workplace where employees can work together and provide excellent service to our customers.
+            </p>
+        </div>
+
+        <div class="career-section">
+            <h2>Why Work With Us?</h2>
+            <p>
+                At The Italian Table, we value teamwork, respect, and a positive work environment. We provide opportunities for employees to develop new skills, gain experience in the restaurant industry, and grow within the company.
+            </p>
+        </div>
+
+        <div class="career-section">
+            <h2>Available Positions</h2>
+
+            <div class="job">
+                <h3>Restaurant Manager</h3>
+                <p>
+                    Restaurant managers are responsible for overseeing daily operations and making sure each location runs smoothly. They work with employees to provide excellent customer service, maintain quality standards, and create a positive dining experience.
+                </p>
+            </div>
+
+            <div class="job">
+                <h3>Chef / Cook</h3>
+                <p>
+                    Chefs and cooks are responsible for preparing delicious meals while maintaining the quality of our food. They work as part of a team to keep the kitchen organized, follow food safety standards, and ensure that every dish meets our expectations.
+                </p>
+            </div>
+
+            <div class="job">
+                <h3>Server</h3>
+                <p>
+                    Servers are responsible for welcoming customers, taking orders, and providing friendly and helpful service. They help create an enjoyable dining experience by making sure customers are satisfied with their meals and overall visit.
+                </p>
+            </div>
+
+            <div class="job">
+                <h3>Host / Hostess</h3>
+                <p>
+                    Hosts and hostesses are responsible for greeting customers and helping them feel welcome when they arrive. They manage seating arrangements, assist with reservations, and help maintain an organized and welcoming dining area.
+                </p>
+            </div>
+        </div>
+
+        <div class="career-section">
+            <h2>How to Apply</h2>
+            <p>
+                Interested in joining our team? Applicants must submit their resume in person at one of The Italian Table's locations for consideration. We look forward to meeting individuals who share our passion for great food, teamwork, and excellent customer service.
+            </p>
+        </div>
+
+    </div>
+
+</main>
+
+<footer>&copy; The Italian Table, Inc., 2026</footer>
+
+<script>
+function toggleMenu() {
+    const menu = document.getElementById("extraMenu");
+    const button = document.querySelector(".menu-button");
+
+    menu.classList.toggle("show");
+
+    button.setAttribute(
+        "aria-expanded",
+        menu.classList.contains("show")
+    );
+}
+</script>
+
+</body>
+</html>

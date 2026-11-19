@@ -1,0 +1,279 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact Us</title>
+<link rel="stylesheet" href="css/styles.css">
+<link rel="stylesheet" href="https://use.typekit.net/mil3frr.css">
+<link rel="stylesheet" href="https://use.typekit.net/fzr4bfx.css">
+<style>
+
+    body {
+        margin: 0;
+    }
+
+    header {
+        width: 100%;
+        height: 100px;
+        text-align: center;
+        font-size: 45px;
+        line-height: 1.8;
+        font-weight: bolder;
+    }
+
+    nav {
+        width: 100%;
+        height: 60px;
+        background-color: darkred;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: antiquewhite;
+    }
+
+    .dropdown {
+        position: relative;
+        display: flex;
+        align-items: center;
+        height: 60px;
+        margin-left: 2%;
+        margin-right: 2%;
+    }
+
+    .dropbtn {
+        display: block;
+    }
+
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        background-color: darkred;
+        min-width: 120px;
+        z-index: 10;
+    }
+
+    .dropdown-content a {
+        display: block;
+        padding: 12px 16px;
+        margin: 0;
+        color: antiquewhite;
+        text-align: center;
+    }
+
+.dropdown-content a:hover {
+    background-color: darkred;
+    color: darkolivegreen;
+    text-decoration: none;
+    opacity: 1;
+}
+
+    .dropdown:hover .dropdown-content {
+        display: block;
+    }
+
+    a {
+        margin-left: 2%;
+        margin-right: 2%;
+        text-decoration: none;
+        color: antiquewhite;
+    }
+
+    a:hover {
+        color: darkolivegreen;
+        text-decoration: underline;
+    }
+
+    main {
+        width: 80%;
+        height: auto;
+        min-height: 900px;
+        margin: 0 auto;
+        padding: 20px;
+        box-sizing: border-box;
+        position: relative;
+    }
+
+    #textHolder {
+        width: 100%;
+        margin: 30px auto 0 auto;
+        height: auto;
+        box-sizing: border-box;
+    }
+
+    .page-section {
+        margin-bottom: 30px;
+    }
+
+    .page-section h2 {
+        margin-bottom: 5px;
+    }
+
+    .page-section p {
+        margin-top: 5px;
+    }
+
+    .content-link {
+        text-decoration: underline;
+        margin: 0;
+    }
+	.content-link:hover {
+    color: darkred;
+    text-decoration: underline;
+    opacity: 1;
+}
+
+    .contact-form {
+        width: 100%;
+        max-width: 650px;
+    }
+
+    .contact-form label {
+        display: block;
+        margin: 16px 0 6px;
+        font-weight: bold;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+        display: block;
+        width: 100%;
+        padding: 10px;
+        box-sizing: border-box;
+        border: 1px solid #cccccc;
+        border-radius: 0;
+        background-color: white;
+        color: #222222;
+        font-family: inherit;
+        font-size: 16px;
+    }
+
+    .contact-form input:focus,
+    .contact-form textarea:focus {
+        background-color: white;
+        outline: 2px solid darkred;
+    }
+
+    .contact-form button {
+        margin-top: 18px;
+        padding: 10px 24px;
+        border: 1px solid darkred;
+        border-radius: 0;
+        background: darkred;
+        color: antiquewhite;
+        font: inherit;
+        cursor: pointer;
+        font-family: inherit;
+    }
+
+.contact-form button:hover {
+    background: darkred;
+    border-color: darkred;
+    color: darkolivegreen;
+}
+
+    footer {
+        width: 100%;
+        height: 300px;
+        padding: 20px;
+        box-sizing: border-box;
+    }
+
+    @media screen and (max-width: 700px) {
+        header {
+            height: auto;
+            font-size: 30px;
+            padding: 20px 0;
+            line-height: 1.2;
+        }
+
+        nav {
+            height: auto;
+            padding: 15px 0;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            margin: 5px 10px;
+        }
+
+        main {
+            width: 95%;
+            height: auto;
+        }
+
+        #textHolder {
+            width: 100%;
+            height: auto;
+            margin: 30px auto 0 auto;
+            padding: 20px;
+        }
+
+        footer {
+            height: auto;
+        }
+    }
+
+</style>
+</head>
+<body>
+<header>Contact Us</header>
+<nav>-
+    <a href="index.html">Home</a>-
+    <div class="dropdown">
+        <a href="leadership.html" class="dropbtn">Leadership</a>
+        <div class="dropdown-content">
+            <a href="ceo.html">CEO</a>
+            <a href="smm.html">SMM</a>
+            <a href="coo.html">COO</a>
+            <a href="cfo.html">CFO</a>
+        </div>
+    </div>
+    -<a href="locations.html">Locations</a>-
+</nav>
+<main>
+<div class="site-menu">
+    <button class="menu-button" onclick="toggleMenu()" aria-label="Open menu"
+            aria-expanded="false" aria-controls="extraMenu">☰</button>
+    <div class="site-menu-content" id="extraMenu">
+    	<a href="about us.html">About Us</a>
+    	<a href="careers.html">Careers</a>
+    	<a href="community-involvement.html">Community Involvement</a>
+    	<a href="contact.html">Contact Us</a>
+    	<a href="customer-reviews.html">Customer Reviews</a>
+    	<a href="dietary-options.html">Dietary Options</a>
+		<a href="faq.html">FAQ</a>
+	</div>
+</div>
+<div id="textHolder">
+
+        <div class="page-section">
+            <h2>Get in Touch</h2>
+            <p>We would love to hear from you. Whether you have a question, comment, or suggestion, The Italian Table welcomes your feedback.</p>
+        </div>
+        <div class="page-section">
+            <h2>Our Locations</h2>
+            <p>The Italian Table serves the Treasure Coast of Florida, with locations in Port St. Lucie, Stuart, Fort Pierce, and Vero Beach.<br>For location details, please visit our <a class="content-link" href="locations.html">Locations page</a>.</p>
+        </div>
+        <div class="page-section">
+            <h2>Send Us a Message</h2>
+            <p>Use the form below to share a question or comment. For the purpose of this website, this is not emailed to anyone. It is just for show.<form class="contact-form" action="#" method="post"><label for="name">Name</label><input type="text" id="name" name="name" required><label for="email">Email Address</label><input type="email" id="email" name="email" required><label for="subject">Subject</label><input type="text" id="subject" name="subject"><label for="message">Message</label><textarea id="message" name="message" rows="6" required></textarea><button type="submit">Submit</button></form></p>
+        </div>
+
+</div>
+</main>
+<footer>&copy; The Italian Table, Inc., 2026</footer>
+
+<script>
+function toggleMenu() {
+    const menu = document.getElementById("extraMenu");
+    const button = document.querySelector(".menu-button");
+    menu.classList.toggle("show");
+    button.setAttribute("aria-expanded", menu.classList.contains("show"));
+}
+</script>
+
+</body>
+</html>

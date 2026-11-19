@@ -1,0 +1,216 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>My First Page</title>
+	<link rel="stylesheet" href="css/styles.css">
+	<link rel="stylesheet" href="https://use.typekit.net/mil3frr.css">
+	<link rel="stylesheet" href="https://use.typekit.net/fzr4bfx.css">
+	<style>
+		body{
+			margin: 0 0 0 0;
+/*			background-color:lemonchiffon;*/
+			font-family: Gotham, "Helvetica Neue", Helvetica, Arial, "sans-serif";
+		}
+		header{
+			width: 100%;
+			height: 100px;
+/*			background-color:lightcyan;*/
+			text-align: center;
+			/*look up flex box for this*/
+			font-size: 45px;
+			line-height: 1.8;
+			font-weight: bolder;
+			
+		}
+		nav{
+			width: 100%;
+			height: 60px;
+			/*text-align: center;*/
+			background-color: darkred;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			color: antiquewhite;
+			
+		}
+		.dropdown {
+    		position: relative;
+    		display: flex;
+    		align-items: center;
+    		height: 60px;
+    		margin-left: 2%;
+    		margin-right: 2%;
+		}
+		.dropbtn {
+    		display: block;
+		}
+		.dropdown-content {
+    		display: none;
+    		position: absolute;
+    		top: 60px;
+    		left: 0;
+    		background-color: darkred;
+    		min-width: 120px;
+    		z-index: 10;
+		}
+		.dropdown-content a {
+    		display: block;
+    		padding: 12px 16px;
+    		margin: 0;
+    		color: antiquewhite;
+    		text-align: center;
+		}
+.dropdown-content a:hover {
+    background-color: darkred;
+    color: darkolivegreen;
+    text-decoration: none;
+    opacity: 1;
+}
+		.dropdown:hover .dropdown-content {
+    		display: block;
+		}
+		a{
+			margin-left: 2%;
+			margin-right: 2%;
+			text-decoration: none;
+/*			color: white;*/
+			
+		}
+		a:hover {
+    		color: darkolivegreen;
+    		text-decoration: underline;
+		}
+
+		main{
+			width: 80%;
+			height: auto;
+			margin: 0 auto;
+/*			background-color:#BC8CE5;*/
+			padding: 20px;
+			box-sizing: border-box;
+			position: relative;
+		}
+		#pictureHolder {
+    		width: 100%;
+    		text-align: center;
+			margin-left: 0%;
+    		margin-bottom: 20px;
+		}
+		.picture {
+    		width: 500px;
+    		height: 333px;
+    		margin: 0 auto;
+    		display: inline-block;
+		}
+		.picture img {
+    		width: 500px;
+    		height: 333px;
+    		display: block;
+    		margin: 0 auto;
+		}
+		#textHolder {
+    		width: 50%;
+    		margin: 0 auto;
+    		height: auto;
+    		text-align: center;
+		}			
+		footer{
+			width: 100%;
+			height: 300px;
+			padding: 20px;
+			box-sizing: border-box;
+/*			background-color: blue;*/
+/*			color: white;*/
+		}
+	</style>
+</head>
+
+<body>
+	<header>Chief Operating Officer</header>
+	<nav>-
+    <a href="index.html">Home</a>-
+
+    <div class="dropdown">
+        <a href="leadership.html" class="dropbtn">Leadership</a>
+
+        <div class="dropdown-content">
+            <a href="ceo.html">CEO</a>
+            <a href="smm.html">SMM</a>
+            <a href="coo.html">COO</a>
+            <a href="cfo.html">CFO</a>
+        </div>
+    </div>
+
+    -<a href="locations.html">Locations</a>-
+</nav>
+	<main>
+		<div class="site-menu">
+
+    <button class="menu-button" onclick="toggleMenu()"
+            aria-label="Open menu" aria-expanded="false"
+            aria-controls="extraMenu">
+        ☰
+    </button>
+
+    <div class="site-menu-content" id="extraMenu">
+    	<a href="about us.html">About Us</a>
+    	<a href="careers.html">Careers</a>
+    	<a href="community-involvement.html">Community Involvement</a>
+    	<a href="contact.html">Contact Us</a>
+    	<a href="customer-reviews.html">Customer Reviews</a>
+    	<a href="dietary-options.html">Dietary Options</a>
+		<a href="faq.html">FAQ</a>
+	</div>
+
+</div>
+		<div id="pictureHolder">
+		<div class="picture"><img src="images/BW1.jpg" width="500" height="333" alt="Marie Madison COO"/></div>
+		</div>
+		<div id="textHolder">
+		<section class="BIO">
+				<h1>Marie Madison</h1>
+				<h2>Chief Operating Officer</h2>
+				<h3>Overseeing Day-to-Day Operations</h3>
+			
+			<div class="card-body">
+			<h4>Biography</h4>
+			<p class="lead">
+                    Marie Madison is the Chief Operating Officer of The Italian Table Inc. She oversees the day-to-day operations and helps make sure everything runs smoothly and efficiently. Marie works with employees and leadership to maintain a well-organized business and a consistent customer experience.
+                </p>
+
+                <h4>Leadership Style</h4>
+                <p>Marie has an organized and hands-on leadership style. She focuses on teamwork, efficiency, and making sure daily responsibilities are completed properly.
+</p>
+
+                
+                <div class="known-for">
+                    Known for saying:
+                    <strong>
+                        "When everyone does their part, everything runs smoothly"
+                    </strong>
+			</div>
+			</div>
+			</section>
+	</div>
+		
+		
+		
+		
+	</main>
+	<footer>&copy; The Italian Table, Inc., 2026</footer>
+	<script>
+function toggleMenu() {
+    const menu = document.getElementById("extraMenu");
+    const button = document.querySelector(".menu-button");
+
+    menu.classList.toggle("show");
+
+    button.setAttribute(
+        "aria-expanded",
+        menu.classList.contains("show")
+    );
+}
+</script>
+</body>
+</html>
